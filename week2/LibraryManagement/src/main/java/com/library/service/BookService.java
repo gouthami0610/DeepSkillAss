@@ -1,0 +1,24 @@
+package com.library.service;
+
+import com.library.repository.BookRepository;
+
+public class BookService {
+    private BookRepository bookRepository;
+
+
+    public void BookService(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+        System.out.println("Constructor injection");
+    }
+    public void setBookRepository(BookRepository bookRepository) {
+
+        this.bookRepository = bookRepository;
+        System.out.println("Setter injection");
+    }
+    public void displayBook(){
+        System.out.println("BookService: Calling repository method");
+        bookRepository.getBook();
+    }
+
+
+}
